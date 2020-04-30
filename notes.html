@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex" />
+    <title></title>
+    <script type="text/javascript" src="js/libs/marked.min.js"></script>
+</head>
+<body>
+<div id="content">
+    <!--# if expr="$QUERY_STRING = /([a-zA-Z0-9_]+)/" -->
+    <!--# set var="filename" value="$1" -->
+    <!--# include file="/docs/$1.md" -->
+    <!--# endif -->
+</div>
+</body>
+<script type="text/javascript">
+    const content = document.getElementById('content');
+    content.innerHTML = marked(content.innerHTML);
+    document.getElementsByTagName("title")[0].innerText =
+        "<!--# echo var="filename" -->".substring("<!--# echo var="filename" -->".indexOf("_")).replace(/_/g," ")
+</script>
+</html>
