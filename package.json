@@ -2,7 +2,9 @@
   "name": "notes",
   "version": "1.0.0",
   "dependencies": {
-    "marked": "^1.0.0",
-    "github-markdown-css": "^4.0.0"
+    "github-markdown-css": "^4.0.0",
+    "grunt": "^1.1.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "marked": "^1.0.0"
   }
 }
