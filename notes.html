@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="robots" content="noindex" />
-    <title></title>
+    <title>
+<!--# if expr="$QUERY_STRING = /([a-z0-9]+)_([a-zA-Z0-9_]+)/" -->
+<!--# set var="title" value="$2" -->
+<!--# echo var="title" -->
+<!--# endif -->
+    </title>
     <script type="text/javascript" src="js/marked.min.js"></script>
     <link rel="stylesheet" href="css/github-markdown.css">
     <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
-<div id="content" class="markdown-body">
+  <div id="content" class="markdown-body">
 <!--# if expr="$QUERY_STRING = /([a-zA-Z0-9_]+)/" -->
-<!--# set var="filename" value="$1" -->
 <!--# include file="/docs/$1.md" -->
 <!--# endif -->
-</div>
-<div style=""
+  </div>
 </body>
 <script type="text/javascript">
     const content = document.getElementById('content');
     content.innerHTML = marked(content.innerHTML);
-    document.getElementsByTagName("title")[0].innerText =
-        "<!--# echo var="filename" -->".substring("<!--# echo var="filename" -->".indexOf("_")).replace(/_/g," ")
 </script>
 </html>
